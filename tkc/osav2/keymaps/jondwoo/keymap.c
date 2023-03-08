@@ -138,17 +138,16 @@ layer_state_t layer_state_set_keymap(layer_state_t state) {
     return state;
 }
 
-// layer_state_t layer_state_set_user(layer_state_t state) {
-//     switch (get_highest_layer(state)) {
-//         case _RAISE:
-//             rgblight_setrgb(RGB_BLUE);
-//             break;
-//         case _LOWER:
-//             rgblight_setrgb(RGB_RED);
-//             break;
-//         default: // for any other layers, or the default layer
-//             rgblight_setrgb (RGB_WHITE);
-//             break;
-//     }
-//   return state;
-// }
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+        case _WORK:
+            rgblight_setrgb(RGB_BLUE);
+            break;
+        case _BASE:
+            rgblight_setrgb(RGB_WHITE);
+            break;
+        default:
+            break;
+    }
+  return state;
+}
