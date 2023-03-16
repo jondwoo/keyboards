@@ -15,29 +15,6 @@
  */
 
 #pragma once
-
-#ifdef OLED_DRIVER_ENABLE
-#    define OLED_DISPLAY_128X64
-#    define OLED_TIMEOUT 60000
-#endif
-
-// If you are using an Elite C rev3 on the slave side, uncomment the lines below:
-#define SPLIT_USB_DETECT
-#define NO_USB_STARTUP_CHECK
-#define SPLIT_USB_TIMEOUT 1000
-
-// EC11K encoders have a different resolution than other EC11 encoders.
-// When using the default resolution of 4, if you notice your encoder skipping
-// every other tick, lower the resolution to 2.
-#define ENCODER_RESOLUTION 2
-#define ENCODER_DIRECTION_FLIP
-
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
-#define NO_ACTION_ONESHOT
-#define OLED_FONT_END 127
-#define OLED_BRIGHTNESS 10
-
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 170
 
@@ -51,9 +28,3 @@
 #define PERMISSIVE_HOLD
 
 #define EE_HANDS
-// qmk flash -kb kyria -km j-inc -bl dfu-split-left & qmk flash -kb kyria -km j-inc -bl dfu-split-right
-
-#ifdef RGBLIGHT_ENABLE
-#    define RGBLIGHT_LED_MAP \
-        { 0, 1, 2, 9, 8, 7, 4, 3, 5, 6, 19, 18, 17, 10, 11, 12, 15, 16, 14, 13 }
-#endif
